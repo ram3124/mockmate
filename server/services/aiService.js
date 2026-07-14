@@ -15,7 +15,7 @@ const client = new OpenAI({
   // and to identify your app in their dashboard. Neither is required for
   // the API to work, but they're good practice and help with debugging.
   defaultHeaders: {
-    'HTTP-Referer': 'http://localhost:5000',
+    'HTTP-Referer': process.env.SERVER_URL || 'http://localhost:5000',
     'X-Title': 'MockMate',
   },
 });
