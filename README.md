@@ -1,255 +1,271 @@
-        <div align="center">
-
-        # 🚀 MockMate
-
-        **AI-Powered Mock Interview Platform for Placement Preparation**
-
-        [![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://mockmate-wheat.vercel.app)
-        [![License](https://img.shields.io/badge/license-MIT-blue)](#)
-        [![Made with React](https://img.shields.io/badge/frontend-React-61DAFB)](#)
-        [![Made with Node](https://img.shields.io/badge/backend-Node.js-339933)](#)
+<div align="center">
 
-        [Live Demo](https://mockmate-wheat.vercel.app) · [Features](#-features) · [Tech Stack](#-tech-stack) · [Installation](#️-installation) · [API Overview](#-api-overview)
+# 🚀 MockMate
 
-        </div>
+**AI-Powered Mock Interview Platform for Placement Preparation**
 
-        ---
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://mockmate-wheat.vercel.app)
+[![License](https://img.shields.io/badge/license-MIT-blue)](#)
+[![Made with React](https://img.shields.io/badge/frontend-React-61DAFB)](#)
+[![Made with Node](https://img.shields.io/badge/backend-Node.js-339933)](#)
 
-        ## 📖 About
+[Live Demo](https://mockmate-wheat.vercel.app) · [Features](#-features) · [Tech Stack](#-tech-stack) · [Installation](#️-installation) · [API Overview](#-api-overview)
 
-        **MockMate** is a full-stack, AI-powered mock interview platform built to help students prepare for technical placements through structured, company-specific mock interviews. Unlike a generic AI chatbot, MockMate runs **timed interview sessions**, tracks progress over time, stores interview history, and generates **detailed AI-powered feedback** so users can improve consistently, session after session.
+</div>
 
-        ---
+---
 
-        ## ✨ Features
+## 📖 About
 
-        | | |
-        |---|---|
-        | 🔐 | JWT Authentication & Authorization |
-        | 👤 | Student & Admin Roles |
-        | 🏢 | Company-Specific Interviews |
-        | 💻 | Multiple Interview Categories (DSA, HR, Core CS) |
-        | ⏱️ | Real-Time Interview Timer |
-        | 📝 | Automatic Answer Saving |
-        | 🤖 | AI-Powered Answer Evaluation using OpenRouter |
-        | 📊 | Performance Analytics Dashboard |
-        | 🏆 | Leaderboard |
-        | 📈 | Progress Tracking |
-        | 📋 | Detailed Interview Reports |
-        | 📱 | Responsive UI |
+**MockMate** is a full-stack, AI-powered mock interview platform built to help students prepare for technical placements through structured, company-specific mock interviews. Unlike a generic AI chatbot, MockMate runs **timed interview sessions**, tracks progress over time, stores interview history, and generates **detailed AI-powered feedback** so users can improve consistently, session after session.
 
-        ---
+---
 
-        ## 🛠 Tech Stack
+## ✨ Features
 
-        **Frontend**
-        - React.js
-        - Vite
-        - Tailwind CSS
-        - React Router
-        - Axios
-        - Recharts
+| | |
+|---|---|
+| 🔐 | JWT Authentication & Authorization |
+| 👤 | Student & Admin Roles |
+| 🏢 | Company-Specific Interviews |
+| 💻 | Multiple Interview Categories (DSA, HR, Core CS) |
+| ⏱️ | Real-Time Interview Timer |
+| 📝 | Automatic Answer Saving |
+| 🤖 | AI-Powered Answer Evaluation using OpenRouter |
+| 📊 | Performance Analytics Dashboard |
+| 🏆 | Leaderboard |
+| 📈 | Progress Tracking |
+| 📋 | Detailed Interview Reports |
+| 📱 | Responsive UI |
 
-        **Backend**
-        - Node.js
-        - Express.js
-        - MongoDB
-        - Mongoose
-        - JWT Authentication
-        - bcrypt
-        - OpenRouter API
+---
 
-        ---
+## 📷 Screenshots
 
-        ## 🏗 Architecture
+<div align="center">
 
-        ```
-        React Frontend
-                │
-                ▼
-        Axios API Calls
-                │
-                ▼
-        Express REST API
-                │
-        ┌──────┴─────────┐
-        │                │
-        ▼                ▼
-        MongoDB      OpenRouter AI
-                │
-                ▼
-        Interview Report
-        ```
+| Login | Dashboard |
+|:---:|:---:|
+| ![Login Screen](assets/login.png) | ![Dashboard](assets/dashboard.png) |
 
-        ---
+| Interview | Report |
+|:---:|:---:|
+| ![Interview Session](assets/interview.png) | ![Interview Report](assets/report.png) |
 
-        ## 📂 Project Structure
+</div>
 
-        ```
-        mockmate/
-        ├── client/          # React frontend
-        ├── server/          # Express backend
-        └── README.md
-        ```
+---
 
-        ---
+## 🛠 Tech Stack
 
-        ## 🔄 Request Flow
+**Frontend**
+- React.js
+- Vite
+- Tailwind CSS
+- React Router
+- Axios
+- Recharts
 
-        ```
-        User → React Frontend → Axios → Express Routes → Controllers
-        → MongoDB → OpenRouter AI Evaluation → MongoDB → Response to Frontend
-        ```
+**Backend**
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- bcrypt
+- OpenRouter API
 
-        ---
+---
 
-        ## 🤖 AI Evaluation
+## 🏗 Architecture
 
-        MockMate uses **OpenRouter** to evaluate interview answers.
+```
+React Frontend
+        │
+        ▼
+Axios API Calls
+        │
+        ▼
+Express REST API
+        │
+ ┌──────┴─────────┐
+ │                │
+ ▼                ▼
+MongoDB      OpenRouter AI
+        │
+        ▼
+Interview Report
+```
 
-        For every submitted answer, the backend sends:
+---
 
-        - Interview Question
-        - Expected Key Points
-        - Student's Answer
+## 📂 Project Structure
 
-        The AI returns:
+```
+mockmate/
+├── client/          # React frontend
+├── server/          # Express backend
+└── README.md
+```
 
-        - ⭐ Score
-        - ✅ Positive Points
-        - ❌ Missing Concepts
-        - 💡 Improvement Tip
-        - 📖 Model Answer
+---
 
-        The backend validates the AI response before saving it to MongoDB, ensuring structured feedback even if the AI provider changes.
+## 🔄 Request Flow
 
-        ---
+```
+User → React Frontend → Axios → Express Routes → Controllers
+→ MongoDB → OpenRouter AI Evaluation → MongoDB → Response to Frontend
+```
 
-        ## 🔐 Authentication
+---
 
-        - JWT Authentication
-        - Protected Routes
-        - Role-Based Authorization
-        - Password Hashing using bcrypt
+## 🤖 AI Evaluation
 
-        ---
+MockMate uses **OpenRouter** to evaluate interview answers.
 
-        ## 📊 Dashboard
+For every submitted answer, the backend sends:
 
-        Students can view:
+- Interview Question
+- Expected Key Points
+- Student's Answer
 
-        - Total Interviews
-        - Average Score
-        - Best Company Performance
-        - Score Trend
-        - Weak Topics
-        - Interview History
+The AI returns:
 
-        ---
+- ⭐ Score
+- ✅ Positive Points
+- ❌ Missing Concepts
+- 💡 Improvement Tip
+- 📖 Model Answer
 
-        ## 🗄 Database Collections
+The backend validates the AI response before saving it to MongoDB, ensuring structured feedback even if the AI provider changes.
 
-        - Users
-        - Questions
-        - Sessions
-        - Feedback
-        - Leaderboard
+---
 
-        ---
+## 🔐 Authentication
 
-        ## ⚙️ Installation
+- JWT Authentication
+- Protected Routes
+- Role-Based Authorization
+- Password Hashing using bcrypt
 
-        ### 1. Clone the Repository
+---
 
-        ```bash
-        git clone https://github.com/ram3124/mockmate.git
-        cd mockmate
-        ```
+## 📊 Dashboard
 
-        ### 2. Install Dependencies
+Students can view:
 
-        **Client**
-        ```bash
-        cd client
-        npm install
-        ```
+- Total Interviews
+- Average Score
+- Best Company Performance
+- Score Trend
+- Weak Topics
+- Interview History
 
-        **Server**
-        ```bash
-        cd server
-        npm install
-        ```
+---
 
-        ---
+## 🗄 Database Collections
 
-        ## 🔑 Environment Variables
+- Users
+- Questions
+- Sessions
+- Feedback
+- Leaderboard
 
-        **Backend (`server/.env`)**
-        ```env
-        PORT=5000
-        MONGO_URI=your_mongodb_uri
-        JWT_SECRET=your_secret
-        OPENROUTER_API_KEY=your_api_key
-        CLIENT_URL=http://localhost:5173
-        ```
+---
 
-        **Frontend (`client/.env`)**
-        ```env
-        VITE_API_URL=http://localhost:5000/api
-        ```
+## ⚙️ Installation
 
-        ---
+### 1. Clone the Repository
 
-        ## ▶️ Run Locally
+```bash
+git clone https://github.com/ram3124/mockmate.git
+cd mockmate
+```
 
-        **Backend**
-        ```bash
-        cd server
-        npm run dev
-        ```
+### 2. Install Dependencies
 
-        **Frontend**
-        ```bash
-        cd client
-        npm run dev
-        ```
+**Client**
+```bash
+cd client
+npm install
+```
 
-        ---
+**Server**
+```bash
+cd server
+npm install
+```
 
-        ## 📌 API Overview
+---
 
-        | Method | Endpoint | Description |
-        |--------|----------|-------------|
-        | POST | `/auth/register` | Register User |
-        | POST | `/auth/login` | Login |
-        | GET | `/questions` | Get Questions |
-        | POST | `/sessions/start` | Start Interview |
-        | POST | `/sessions/:id/answer` | Submit Answer |
-        | POST | `/sessions/:id/complete` | Complete Interview |
-        | GET | `/sessions/:id/report` | Get Report |
-        | GET | `/analytics/dashboard` | Dashboard Stats |
-        | GET | `/leaderboard` | Leaderboard |
+## 🔑 Environment Variables
 
-        ---
+**Backend (`server/.env`)**
+```env
+PORT=5000
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret
+OPENROUTER_API_KEY=your_api_key
+CLIENT_URL=http://localhost:5173
+```
 
-        ## 🚀 Future Improvements
+**Frontend (`client/.env`)**
+```env
+VITE_API_URL=http://localhost:5000/api
+```
 
-        - [ ] Voice-based interviews
-        - [ ] Speech-to-Text
-        - [ ] PDF Report Export
-        - [ ] Mobile Application
-        - [ ] Email Progress Reports
-        - [ ] Peer Mock Interviews
+---
 
-        ---
+## ▶️ Run Locally
 
-        ## 👨‍💻 Author
+**Backend**
+```bash
+cd server
+npm run dev
+```
 
-        **Ram Bhamoriya**
-        GitHub: [@ram3124](https://github.com/ram3124)
+**Frontend**
+```bash
+cd client
+npm run dev
+```
 
-        ---
+---
 
-        ## ⭐ Support
+## 📌 API Overview
 
-        If you find this project useful, consider giving it a ⭐ on GitHub — it helps a lot!
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/auth/register` | Register User |
+| POST | `/auth/login` | Login |
+| GET | `/questions` | Get Questions |
+| POST | `/sessions/start` | Start Interview |
+| POST | `/sessions/:id/answer` | Submit Answer |
+| POST | `/sessions/:id/complete` | Complete Interview |
+| GET | `/sessions/:id/report` | Get Report |
+| GET | `/analytics/dashboard` | Dashboard Stats |
+| GET | `/leaderboard` | Leaderboard |
+
+---
+
+## 🚀 Future Improvements
+
+- [ ] Voice-based interviews
+- [ ] Speech-to-Text
+- [ ] PDF Report Export
+- [ ] Mobile Application
+- [ ] Email Progress Reports
+- [ ] Peer Mock Interviews
+
+---
+
+## 👨‍💻 Author
+
+**Ram Bhamoriya**
+GitHub: [@ram3124](https://github.com/ram3124)
+
+---
+
+## ⭐ Support
+
+If you find this project useful, consider giving it a ⭐ on GitHub — it helps a lot!
